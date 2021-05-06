@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Ürün Detayı";
+}
+
+@model int[]
+
+<div class="text-center">
+    <h1 class="display-4">Talep Edilen Ürün</h1>
+    @*@{ 
+        var sayac = Convert.ToInt32( ViewData["ProductId"]) + 1;
+    }*@
+
+    @{ 
+        for (int i = 0; i < Model.Length; i++)
+        {
+            @Html.Raw($"<p>{i + 1}. Değer : {Model[i]}</p>");
+        }
+    }
+
+    @*<p>Talep edilen ürünün id değeri : @Model</p>*@
+</div>
